@@ -172,6 +172,9 @@ class Doorbell_Core {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wc_stripe_payment_fields_stripe', $plugin_public, 'dc_wc_stripe_payment_fields_stripe_callback' );
+		$this->loader->add_filter( 'woocommerce_paypal_payments_checkout_button_renderer_hook', $plugin_public, 'dc_woocommerce_paypal_payments_checkout_button_renderer_hook_callback' );
+		
 
 	}
 

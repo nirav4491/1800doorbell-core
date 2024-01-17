@@ -99,5 +99,25 @@ class Doorbell_Core_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/doorbell-core-public.js', array( 'jquery' ), $this->version, false );
 
 	}
+	/**
+	 * Function to reposition of the place order button for the stripe payment method.
+	 * 
+	 * @param String $pyament_method_id This Variable holds the value for the payment method id.
+	 * @since 1.0.0
+	 */
+	public function dc_wc_stripe_payment_fields_stripe_callback( $pyament_method_id ) {
+		if ( 'stripe' === $pyament_method_id ) {
+			$order_button_text = __('Place order', 'woocommerce');
+			echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" />' );
+		}
+	}
+	/**
+	 * Function to reposition the paypal place holder buttton.
+	 * 
+	 * @since 1.0.0
+	 */
+	public function dc_woocommerce_paypal_payments_checkout_button_renderer_hook_callback() {
+		return 'woocommerce_review_order_before_payment';
+	}
 
 }
