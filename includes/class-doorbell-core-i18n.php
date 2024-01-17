@@ -9,8 +9,8 @@
  * @link       https://github.com/nirav4491
  * @since      1.0.0
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/includes
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/includes
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/includes
  * @author     Concatstring <account@concatstring.com>
  */
-class 1800doorbell_Core_i18n {
+class Doorbell_Core_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class 1800doorbell_Core_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'1800doorbell-core',
+			'doorbell-core',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

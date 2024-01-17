@@ -22,7 +22,7 @@
  * @link       https://github.com/nirav4491
  * @since      1.0.0
  *
- * @package    1800doorbell_Core
+ * @package    Doorbell_Core
  */
 
 // If uninstall not called from WordPress, then exit.

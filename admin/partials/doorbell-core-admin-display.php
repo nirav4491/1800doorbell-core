@@ -8,8 +8,8 @@
  * @link       https://github.com/nirav4491
  * @since      1.0.0
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/admin/partials
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/admin/partials
  */
 ?>
 

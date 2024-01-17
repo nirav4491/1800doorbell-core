@@ -6,8 +6,8 @@
  * @link       https://github.com/nirav4491
  * @since      1.0.0
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/includes
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/includes
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/includes
  * @author     Concatstring <account@concatstring.com>
  */
-class 1800doorbell_Core_Loader {
+class Doorbell_Core_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

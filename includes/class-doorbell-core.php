@@ -9,8 +9,8 @@
  * @link       https://github.com/nirav4491
  * @since      1.0.0
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/includes
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/includes
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/includes
  * @author     Concatstring <account@concatstring.com>
  */
-class 1800doorbell_Core {
+class Doorbell_Core {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class 1800doorbell_Core {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      1800doorbell_Core_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Doorbell_Core_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class 1800doorbell_Core {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( '1800DOORBELL_CORE_VERSION' ) ) {
-			$this->version = 1800DOORBELL_CORE_VERSION;
+		if ( defined( 'DOORBELL_CORE_VERSION' ) ) {
+			$this->version = DOORBELL_CORE_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = '1800doorbell-core';
+		$this->plugin_name = 'doorbell-core';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class 1800doorbell_Core {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - 1800doorbell_Core_Loader. Orchestrates the hooks of the plugin.
-	 * - 1800doorbell_Core_i18n. Defines internationalization functionality.
-	 * - 1800doorbell_Core_Admin. Defines all hooks for the admin area.
-	 * - 1800doorbell_Core_Public. Defines all hooks for the public side of the site.
+	 * - Doorbell_Core_Loader. Orchestrates the hooks of the plugin.
+	 * - Doorbell_Core_i18n. Defines internationalization functionality.
+	 * - Doorbell_Core_Admin. Defines all hooks for the admin area.
+	 * - Doorbell_Core_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class 1800doorbell_Core {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-1800doorbell-core-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-doorbell-core-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-1800doorbell-core-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-doorbell-core-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-1800doorbell-core-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-doorbell-core-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-1800doorbell-core-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-doorbell-core-public.php';
 
-		$this->loader = new 1800doorbell_Core_Loader();
+		$this->loader = new Doorbell_Core_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the 1800doorbell_Core_i18n class in order to set the domain and to register the hook
+	 * Uses the Doorbell_Core_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class 1800doorbell_Core {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new 1800doorbell_Core_i18n();
+		$plugin_i18n = new Doorbell_Core_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class 1800doorbell_Core {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new 1800doorbell_Core_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Doorbell_Core_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +168,7 @@ class 1800doorbell_Core {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new 1800doorbell_Core_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Doorbell_Core_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +199,7 @@ class 1800doorbell_Core {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    1800doorbell_Core_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Doorbell_Core_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

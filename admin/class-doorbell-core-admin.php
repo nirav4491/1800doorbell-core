@@ -6,8 +6,8 @@
  * @link       https://github.com/nirav4491
  * @since      1.0.0
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/admin
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    1800doorbell_Core
- * @subpackage 1800doorbell_Core/admin
+ * @package    Doorbell_Core
+ * @subpackage Doorbell_Core/admin
  * @author     Concatstring <account@concatstring.com>
  */
-class 1800doorbell_Core_Admin {
+class Doorbell_Core_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class 1800doorbell_Core_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in 1800doorbell_Core_Loader as all of the hooks are defined
+		 * defined in Doorbell_Core_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The 1800doorbell_Core_Loader will then create the relationship
+		 * The Doorbell_Core_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/1800doorbell-core-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/doorbell-core-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class 1800doorbell_Core_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in 1800doorbell_Core_Loader as all of the hooks are defined
+		 * defined in Doorbell_Core_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The 1800doorbell_Core_Loader will then create the relationship
+		 * The Doorbell_Core_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/1800doorbell-core-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/doorbell-core-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
